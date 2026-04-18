@@ -1,0 +1,86 @@
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  animation: fadeIn 0.6s ease-out forwards;
+}
+
+.login-box {
+  background: rgba(18, 18, 18, 0.6);
+  backdrop-filter: blur(16px);
+  padding: 40px;
+  border-radius: 20px;
+  width: 350px;
+  animation: slideUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.login-box input {
+  width: 100%;
+  padding: 22px 12px 10px 12px;
+  margin: 0;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  background: rgba(26, 26, 26, 0.7);
+  color: white;
+  transition: all 0.3s ease;
+}
+
+.login-box input:focus {
+  outline: none;
+  border-color: rgba(255, 122, 0, 0.5);
+  background: rgba(26, 26, 26, 0.9);
+  box-shadow: 0 0 15px rgba(255, 122, 0, 0.15);
+}
+
+.login-box input.input-error {
+  border-color: rgba(239, 68, 68, 0.5);
+  box-shadow: 0 0 15px rgba(239, 68, 68, 0.15);
+  animation: shake 0.4s ease-in-out;
+}
+
+/* Floating Label Magic */
+.input-group {
+  position: relative;
+  width: 100%;
+  margin-bottom: 4px;
+}
+
+.floating-label {
+  position: absolute;
+  left: 42px; /* Offset for icon */
+  top: 17px;
+  color: #888;
+  font-size: 14px;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  pointer-events: none;
+  transform-origin: left top;
+}
+
+.login-box input:focus ~ .floating-label,
+.login-box input:not(:placeholder-shown) ~ .floating-label {
+  transform: translateY(-10px) scale(0.75);
+  color: #ff7a00;
+}
+
+.login-box input.input-error:focus ~ .floating-label,
+.login-box input.input-error:not(:placeholder-shown) ~ .floating-label {
+  color: #ef4444;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-4px); }
+  75% { transform: translateX(4px); }
+}

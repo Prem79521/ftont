@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.css": "/static/css/main.3c4514cf.css",
-    "main.js": "/static/js/main.137212d1.js",
-    "static/media/payment-methods.svg": "/static/media/payment-methods.69e7ec34d1302e6b58b2cb1abe6b2f9c.svg",
+    "main.css": "/static/css/main.6d5016d7.css",
+    "main.js": "/static/js/main.de7870b6.js",
+    "static/media/payment-methods.svg": "/static/media/payment-methods.988eb4961d60369cbc3b112cffb05261.svg",
     "static/media/404-not-found.svg": "/static/media/404-not-found.f58b723c5e420e43683574327be5529a.svg",
     "static/media/furniture.png": "/static/media/furniture.c167da994e4cf873c7f5.png",
     "static/media/kitchen-sale.jpg": "/static/media/kitchen-sale.058c7dbd12f5f0a0be9e.jpg",
@@ -29,7 +29,7 @@
     "index.html": "/index.html"
   },
   "entrypoints": [
-    "static/css/main.3c4514cf.css",
-    "static/js/main.137212d1.js"
+    "static/css/main.6d5016d7.css",
+    "static/js/main.de7870b6.js"
   ]
 }

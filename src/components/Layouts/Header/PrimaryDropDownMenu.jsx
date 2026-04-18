@@ -37,11 +37,6 @@ const PrimaryDropDownMenu = ({ setTogglePrimaryDropDown, user }) => {
             redirect: "/",
         },
         {
-            title: "Flipkart Plus Zone",
-            icon: <AddCircleIcon sx={{ fontSize: "18px" }} />,
-            redirect: "/",
-        },
-        {
             title: "Orders",
             icon: <ShoppingBagIcon sx={{ fontSize: "18px" }} />,
             redirect: "/orders",

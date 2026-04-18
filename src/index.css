@@ -5,27 +5,46 @@
 @tailwind utilities;
 
 :root {
-  --color-primary: #ff6a00;
-  --color-primary-rgb: 255, 106, 0;
-  --color-primary-hover: #ff7a1a;
-  --color-bg: #0f0f0f;
-  --color-bg-secondary: #2a2a2a;
-  --color-text: #ffffff;
-  --color-text-secondary: #777777;
+  /* Core Base Variables */
+  --bg: #0f0f0f;
+  --card: #1a1a1a;
+  --accent: #ff7a00;
+  --text: #ffffff;
+  --subtext: #b3b3b3;
+
+  /* Legacy & Extended Variables */
+  --color-primary: var(--accent);
+  --color-primary-rgb: 255, 122, 0;
+  --color-primary-hover: #ff8b1a;
+  --color-bg: var(--bg);
+  --color-bg-secondary: var(--card);
+  --color-text: var(--text);
+  --color-text-secondary: var(--subtext);
   --color-scrollbar: #333333;
 
-  --radius-sm: 8px;
-  --radius-md: 10px;
-  --radius-lg: 16px;
+  --radius-sm: 12px;
+  --radius-md: 16px;
+  --radius-lg: 20px;
   --radius-full: 9999px;
 
-  --shadow-sm: 0 2px 8px rgba(var(--color-primary-rgb), 0.3);
-  --shadow-md: 0 4px 14px 0 rgba(var(--color-primary-rgb), 0.39);
-  --shadow-lg: 0 6px 20px rgba(var(--color-primary-rgb), 0.5);
+  --shadow-sm: 0 4px 10px rgba(var(--color-primary-rgb), 0.15);
+  --shadow-md: 0 6px 16px rgba(var(--color-primary-rgb), 0.25);
+  --shadow-lg: 0 8px 24px rgba(var(--color-primary-rgb), 0.35);
   --shadow-glass: 0 4px 30px rgba(0, 0, 0, 0.1);
 
   --glass-bg: rgba(255, 255, 255, 0.05);
   --glass-border: rgba(255, 255, 255, 0.1);
+}
+
+.section {
+  padding: 40px 60px;
+}
+
+.card {
+  background: var(--card);
+  border-radius: 16px;
+  padding: 16px;
+  transition: all 0.3s ease;
 }
 
 @layer base {
@@ -143,41 +162,45 @@
     box-shadow: var(--shadow-glass);
   }
 
-  /* Button System */
-  .btn-primary {
-    background-color: var(--color-primary);
-    color: var(--color-text);
-    padding: 0.75rem 1.75rem;
-    font-size: 1rem;
-    font-weight: 500;
+  button {
+    background: #ff7a00;
     border: none;
-    border-radius: var(--radius-md);
-    cursor: pointer;
-    box-shadow: var(--shadow-md);
-    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
+    border-radius: 8px;
+    padding: 10px 16px;
+    color: white;
+    transition: 0.3s;
   }
 
-  .btn-primary:hover:not(:disabled) {
-    background-color: var(--color-primary-hover);
-    transform: scale(1.03);
-    box-shadow: var(--shadow-lg);
+  button:hover {
+    background: #ff8c1a;
+    box-shadow: 0 0 15px rgba(255, 122, 0, 0.6);
   }
 
-  .btn-primary:active:not(:disabled) {
-    transform: scale(0.97);
-    box-shadow: var(--shadow-sm);
+  .category-item {
+    transition: 0.3s ease;
   }
 
-  .btn-primary:disabled {
-    background-color: var(--color-bg-secondary);
-    color: var(--color-text-secondary);
-    cursor: not-allowed;
-    box-shadow: none;
-    opacity: 0.7;
-    transform: none;
+  .category-item:hover {
+    transform: scale(1.1);
+  }
+
+  .nav-link {
+    position: relative;
+  }
+
+  .nav-link::after {
+    content: '';
+    position: absolute;
+    width: 0%;
+    height: 2px;
+    background: #ff7a00;
+    bottom: -4px;
+    left: 0;
+    transition: 0.3s;
+  }
+
+  .nav-link:hover::after {
+    width: 100%;
   }
 }
 

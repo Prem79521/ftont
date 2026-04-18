@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 
 const Product = ({ image, name, offer, tag }) => {
     return (
-        <Link to="/products" className="flex flex-col items-center gap-1.5 p-4 mx-3 my-2 cursor-pointer bg-[#222222] border border-gray-800 rounded-xl transition-all duration-300 ease-out hover:-translate-y-1 hover:scale-105 hover:shadow-[0_0_20px_rgba(255,106,0,0.5)] group">
+        <Link to="/products" className="flex flex-col items-center gap-2 p-5 mx-3 my-2 cursor-pointer bg-[var(--color-bg-secondary)] border border-gray-800 rounded-[var(--radius-md)] transition-all duration-300 ease-out hover:-translate-y-1 hover:scale-105 hover:shadow-[0_0_20px_rgba(var(--color-primary-rgb),0.5)] group">
             <div className="w-36 h-36 transform group-hover:scale-110 transition-transform duration-300 ease-out">
                 <img draggable="false" className="w-full h-full object-contain drop-shadow-sm" src={image} alt={name} />
             </div>

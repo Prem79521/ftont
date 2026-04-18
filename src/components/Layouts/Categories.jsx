@@ -56,10 +56,10 @@ const Categories = () => {
 
                 {catNav.map((item, i) => (
                     <Link to={`/products?category=${item.name}`} className="flex flex-col gap-3 items-center group min-w-[80px]" key={i}>
-                        <div className="h-16 w-16 sm:h-20 sm:w-20 rounded-full glass flex items-center justify-center p-4 group-hover:scale-105 transition-transform overflow-hidden cursor-pointer shadow-sm">
-                            <img draggable="false" className="h-full w-full object-contain drop-shadow-md" src={item.icon} alt={item.name} />
+                        <div className="category-item h-16 w-16 sm:h-20 sm:w-20 rounded-full glass flex items-center justify-center p-4 overflow-hidden cursor-pointer shadow-sm relative">
+                            <img draggable="false" className="h-full w-full object-contain drop-shadow-md z-10" src={item.icon} alt={item.name} />
                         </div>
-                        <span className="text-xs sm:text-sm font-medium text-center text-gray-300 group-hover:text-[var(--color-primary)] transition-colors">{item.name}</span>
+                        <span className="text-xs sm:text-sm font-medium text-center text-gray-300 group-hover:text-[#ff7a00] transition-colors duration-300">{item.name}</span>
                     </Link>
                 ))}
 
